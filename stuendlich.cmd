@@ -7,6 +7,7 @@ timeout 1
 net use \\<your smb IP address here>\<folder>\<folder> /user:<username> <password> >> C:\backupskripte\log_stuendlich_%SUBFILENAME%.txt
 timeout 1
 robocopy /r:2 /w:5 D:\<folder>\<folder>\<folder>\<folder> \\<your smb IP address here>\<folder>\<folder>\<folder> /MIR >> C:\backupskripte\log_stuendlich_%SUBFILENAME%.txt
+timeout 10
 IF NOT EXIST C:\backupskripte\log_stuendlich.zip (
 C:\backupskripte\zipjs.bat zipItem -source C:\backupskripte\log_stuendlich_%SUBFILENAME%.txt -destination C:\backupskripte\log_stuendlich.zip -keep no
 ) ELSE (
